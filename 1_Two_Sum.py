@@ -1,11 +1,20 @@
-def main(nums,target):
-    numMap = {}
-    n = len(nums)
-    for i in range(n):
-        dif = target - nums[i]
-        if dif in numMap:
-            return [numMap[dif], i]
-        numMap[nums[i]] = i
+from typing import List
+def find_two_sum_indices(nums: List[int], target: int) -> List[int]:
+    """
+    Finds the indices of two numbers in the given list that add up to the target value.
 
-if __name__=="__main__":
-    print(main(nums = [2,7,11,15], target = 9))
+    Args:
+        nums (List[int]): The list of numbers.
+        target (int): The target value.
+
+    Returns:
+        List[int]: The indices of the two numbers that add up to the target value.
+    """
+    num_to_index = {}
+    for i, num in enumerate(nums):
+        dif = target - num
+        if dif in num_to_index:
+            return [num_to_index[dif], i]
+        num_to_index[num] = i
+
+print(find_two_sum_indices(nums=[2, 7, 11, 15], target=9))
