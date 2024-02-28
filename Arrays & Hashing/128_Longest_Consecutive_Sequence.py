@@ -1,13 +1,4 @@
 def main(nums):
-    """
-    Returns the length of the longest consecutive subsequence in the given list of numbers.
-
-    Args:
-    - nums: A list of integers
-
-    Returns:
-    - length: An integer representing the length of the longest consecutive subsequence
-    """
 
     if not nums:
         return 0
